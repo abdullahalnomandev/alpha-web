@@ -2,13 +2,10 @@
 
 import { useState } from "react";
 import { Form, Input, Button, Row, Col, Card, message } from "antd";
-import { clientFetch } from "@/lib/client-fetch";
 import Link from "next/link";
 import { LogIn } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { apiFetch } from "@/lib/api/api-fech";
-import { toast } from "sonner";
-import { setAccessTokenToCookie } from "@/services/action.setTokenToCookie";
 import { authKey } from "@/constants/storageKey";
 
 function MemberLogin() {

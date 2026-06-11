@@ -611,7 +611,6 @@ export default function MemberApplicationForm() {
                 <Form.Item
                   label="Passport Photo"
                   name="logo"
-                  rules={[{ required: true, message: "Passport is required" }]}
                   className="w-full"
                 >
                   <Upload.Dragger

@@ -22,7 +22,7 @@ export async function apiFetch<T>(
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${endpoint}`, {
         ...options,
-        credentials: 'include',
+        credentials: "include",
         headers: {
             ...(isFormData ? {} : { "Content-Type": "application/json" }),
             ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),

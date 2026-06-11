@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { User, Users } from "lucide-react";
-import alphaLogo from "@/assets/alpha-logo.png";
+import alphaLogo from "@/assets/alpha-bg.png";
 import Image from "next/image";
 
 const navLinks = [
