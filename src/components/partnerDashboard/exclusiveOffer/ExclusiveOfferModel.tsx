@@ -33,6 +33,7 @@ export const ExclusiveOfferModel: React.FC<ExclusiveOfferModelProps> = ({
   const [form] = Form.useForm();
   const [fileList, setFileList] = useState<UploadFile[]>([]);
   const [html, setHtml] = useState<string>("");
+  const [businessHtml, setBusinessHtml] = useState<string>("");
   const [removedFiles, setRemovedFiles] = useState<string[]>([]);
   const [discountEnable, setDiscountEnable] = useState<boolean>(false);
 
@@ -55,6 +56,8 @@ export const ExclusiveOfferModel: React.FC<ExclusiveOfferModelProps> = ({
         discountValue: discount.value,
       });
       setHtml(editEvent.description || "");
+      //@ts-ignore
+      setBusinessHtml(editEvent.businessDescription || "");
       setDiscountEnable(discount.enable);
 
       // Handle existing images
@@ -121,7 +124,7 @@ export const ExclusiveOfferModel: React.FC<ExclusiveOfferModelProps> = ({
       formData.append("title", values.title);
       formData.append("address", values.address);
       formData.append("description", html || "");
-      formData.append("businessDescription", html || "");
+      formData.append("businessDescription", businessHtml || "");
       if (values.category) formData.append("category", values.category);
       formData.append("discount[enable]", String(!!values.discountEnable));
       formData.append(
@@ -144,6 +147,7 @@ export const ExclusiveOfferModel: React.FC<ExclusiveOfferModelProps> = ({
         form.resetFields();
         setFileList([]);
         setHtml("");
+        setBusinessHtml("");
         setDiscountEnable(false);
         setRemovedFiles([]);
       }
@@ -256,6 +260,15 @@ export const ExclusiveOfferModel: React.FC<ExclusiveOfferModelProps> = ({
             onChange={(e) => setHtml(e.target.value)}
             style={{ minHeight: 150 }}
             placeholder="Write Offer Description"
+          />
+        </Form.Item>
+
+        <Form.Item label="Business Description" style={{ marginBottom: 24 }}>
+          <Editor
+            value={html}
+            onChange={(e) => setBusinessHtml(e.target.value)}
+            style={{ minHeight: 150 }}
+            placeholder="Write Business Description"
           />
         </Form.Item>
         <Form.Item label="Business Description" style={{ marginBottom: 24 }}>
