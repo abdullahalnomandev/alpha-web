@@ -14,7 +14,7 @@ const Footer = () => {
           "radial-gradient(50% 50% at 50% 50%, #162247 0%, #0C1223 100%)",
       }}
     >
-      <div className="mx-auto max-w-screen-xl px-4">
+      <div className="mx-auto max-w-7xl px-4">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-[254px] pb-10">
           {/* Brand Column */}
           <div className="flex flex-col gap-4 w-full lg:w-[345px]">
