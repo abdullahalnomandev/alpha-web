@@ -63,10 +63,10 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/partners"
+                    href="/partner-info.html"
                     className="text-sm leading-6 text-[#FEFEFE] hover:text-[#FE9800] transition-colors"
                   >
-                    Partner with Us
+                    Partner Information
                   </Link>
                 </li>
                 <li>
