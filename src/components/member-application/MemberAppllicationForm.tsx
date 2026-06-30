@@ -87,13 +87,30 @@ const primaryMemberFields = [
     rules: [{ required: true }],
   },
   {
-    name: "residenceAddress",
-    label: "Residential Address",
-    type: "textarea",
-    span: 24,
-    rows: 3,
+    name: "emirate",
+    label: "Emirate",
+    type: "select",
+    span: 12,
+    placeholder: "Select your emirate",
+    options: [
+      "Abu Dhabi",
+      "Dubai",
+      "Sharjah",
+      "Ajman",
+      "Umm Al Quwain",
+      "Ras Al Khaimah",
+      "Fujairah",
+    ],
     rules: [{ required: true }],
   },
+  // {
+  //   name: "residenceAddress",
+  //   label: "Residential Address",
+  //   type: "textarea",
+  //   span: 24,
+  //   rows: 3,
+  //   rules: [{ required: true }],
+  // },
 ];
 
 const professionalFields = [
@@ -230,7 +247,8 @@ export default function MemberApplicationForm() {
       formData.append("dateOfBirth", values.dateOfBirth?.toISOString());
       formData.append("nationality", values.nationality);
       formData.append("countryOfResidence", values.countryOfResidence);
-      formData.append("residenceAddress", values.residenceAddress);
+      formData.append("emirate", values.emirate);
+      // formData.append("residenceAddress", values.residenceAddress);
       formData.append("industrySector", values.industrySector);
       formData.append("yearsOfExperience", values.yearsOfExperience);
       formData.append("currentEmployer", values.currentEmployer);
@@ -357,7 +375,7 @@ export default function MemberApplicationForm() {
                 >
                   {field.type === "textarea" ? (
                     <TextArea
-                      rows={field.rows}
+                      rows={(field as any).rows || 3}
                       className="rounded-md bg-[#F1F1F1]! border-none"
                     />
                   ) : field.type === "date" ? (
@@ -365,6 +383,18 @@ export default function MemberApplicationForm() {
                       size="large"
                       className="w-full rounded-md bg-[#F1F1F1]! border-none"
                     />
+                  ) : field.type === "select" ? (
+                    <Select
+                      size="large"
+                      placeholder={(field as any).placeholder}
+                      className="[&_.ant-select-selector]:bg-[#F1F1F1]! [&_.ant-select-selector]:rounded-md [&_.ant-select-selector]:border-none"
+                    >
+                      {(field as any).options?.map((opt: string) => (
+                        <Select.Option key={opt} value={opt}>
+                          {opt}
+                        </Select.Option>
+                      ))}
+                    </Select>
                   ) : field.name === "mobile" ? (
                     <PhoneInput
                       defaultCountry="ae"
@@ -400,6 +430,7 @@ export default function MemberApplicationForm() {
                     {field.type === "select" ? (
                       <Select
                         size="large"
+                        placeholder={(field as any).placeholder}
                         className="[&_.ant-select-selector]:bg-[#F1F1F1]! [&_.ant-select-selector]:rounded-md [&_.ant-select-selector]:border-none"
                       >
                         {field.options?.map((opt) => (
@@ -607,7 +638,7 @@ export default function MemberApplicationForm() {
               </Col>
 
               {/* Passport */}
-              <Col xs={24} md={12}>
+              {/* <Col xs={24} md={12}>
                 <Form.Item
                   label="Passport Photo"
                   name="logo"
@@ -632,7 +663,7 @@ export default function MemberApplicationForm() {
                     </div>
                   </Upload.Dragger>
                 </Form.Item>
-              </Col>
+              </Col> */}
             </Row>
           </div>
 
