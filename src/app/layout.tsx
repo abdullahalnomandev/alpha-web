@@ -13,7 +13,7 @@ const manrope = Manrope({
   fallback: ["system-ui", "sans-serif"],
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://alphaclub.ae";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://alphaclubuae.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),

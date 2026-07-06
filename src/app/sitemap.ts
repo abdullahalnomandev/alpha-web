@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://alphaclub.ae";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://alphaclubuae.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
