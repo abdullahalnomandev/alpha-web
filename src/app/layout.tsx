@@ -35,21 +35,21 @@ export const metadata: Metadata = {
     title: "Alpha Club UAE - Premium Lifestyle Club",
     description:
       "Alpha Club UAE is your gateway to exclusive lifestyle benefits, events, and offers across the UAE. Join the premium community today.",
-    // images: [
-    //   {
-    //     url: "/og-image.jpg",
-    //     width: 1200,
-    //     height: 630,
-    //     alt: "Alpha Club UAE",
-    //   },
-    // ],
+    images: [
+      {
+        url: "/logo.png",
+        width: 1080,
+        height: 1080,
+        alt: "Alpha Club UAE",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Alpha Club UAE - Premium Lifestyle Club",
     description:
       "Alpha Club UAE is your gateway to exclusive lifestyle benefits, events, and offers across the UAE. Join the premium community today.",
-    // images: ["/og-image.jpg"],
+    images: ["/logo.png"],
     // creator: "@alphaclubuae",
   },
   robots: {
@@ -64,7 +64,11 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/logo.png", sizes: "any" },
+    ],
     // shortcut: "/favicon.ico",
     // apple: "/apple-touch-icon.png",
   },
